@@ -21,6 +21,8 @@ for index, row in lakes.iterrows():
       #print(row['No'], row['region'], row['station'].replace(' ', '+'), row['water_body'])
       res_json = fetch(row['region'], row['station'].replace(' ', '+'), 'Gardno')
       print(res_json)
+      print()
+      print(type(res_json))
       row['coordinates'] = res_json.features.0.geometry.coordinates
     
 
